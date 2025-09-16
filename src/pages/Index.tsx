@@ -4,7 +4,7 @@ import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
 import HowItWorks from "@/components/HowItWorks";
 import Benefits from "@/components/Benefits";
-import Testimonials from "@/components/Testimonials";
+
 import FinalCTA from "@/components/FinalCTA";
 
 const Index = () => {
@@ -25,7 +25,7 @@ const Index = () => {
       <SolutionSection />
       <HowItWorks />
       <Benefits />
-      <Testimonials />
+      
       <FinalCTA />
     </main>
   );
