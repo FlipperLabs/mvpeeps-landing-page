@@ -1,15 +1,42 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useToast } from "@/components/ui/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { ChevronRight, Sparkles } from "lucide-react";
 
 const Hero = () => {
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Email submitted:", email);
-    // Handle email submission here
+    setIsSubmitting(true);
+    
+    try {
+      const { data, error } = await supabase.functions.invoke('notify-waitlist', {
+        body: { email }
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Success!",
+        description: "You've been added to the waitlist. We'll be in touch soon!",
+      });
+      
+      setEmail("");
+    } catch (error: any) {
+      console.error("Error joining waitlist:", error);
+      toast({
+        title: "Error",
+        description: error.message || "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -43,8 +70,13 @@ const Hero = () => {
               className="flex-1 h-12 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60"
               required
             />
-            <Button type="submit" size="lg" className="h-12 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8">
-              Join Waitlist
+            <Button 
+              type="submit" 
+              size="lg" 
+              disabled={isSubmitting}
+              className="h-12 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8"
+            >
+              {isSubmitting ? "Joining..." : "Join Waitlist"}
               <ChevronRight className="w-4 h-4 ml-2" />
             </Button>
           </form>
