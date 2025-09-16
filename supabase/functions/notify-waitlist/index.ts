@@ -57,7 +57,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send notification email to hello@flipperlabs.app
     const emailResponse = await resend.emails.send({
-      from: "Waitlist <onboarding@resend.dev>",
+      from: "Waitlist <hello@message.flipperlabs.app>",
       to: ["hello@flipperlabs.app"],
       subject: "New Waitlist Signup - Virtual Product Team",
       html: `
