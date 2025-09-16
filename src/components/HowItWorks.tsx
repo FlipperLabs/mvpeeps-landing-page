@@ -5,8 +5,8 @@ const HowItWorks = () => {
     {
       number: "01",
       icon: MessageSquare,
-      title: "Share Your Idea",
-      description: "Tell us about your project, goals, and what you've built so far"
+      title: "Integrate with GitHub",
+      description: "Connect your repo and share your project goals and what you've built so far"
     },
     {
       number: "02", 
