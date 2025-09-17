@@ -52,12 +52,12 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 leading-tight">
-            <span className="bg-gradient-accent bg-clip-text text-transparent">MVPeeps:</span> Never Build
+            Never Build
             <span className="bg-gradient-accent bg-clip-text text-transparent"> Alone</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Your virtual product team, on demand. MVPeeps turns vibes into viable products with AI-powered strategists, 
+            Meet MVPeeps - your virtual product team, on demand. Turn vibes into viable products with AI-powered strategists, 
             challengers, and user advocates in your pocket.
           </p>
 
