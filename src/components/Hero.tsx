@@ -81,9 +81,6 @@ const Hero = () => {
             </Button>
           </form>
 
-          <p className="text-sm text-primary-foreground/60">
-            Join 500+ builders already on the waitlist
-          </p>
         </div>
       </div>
       
