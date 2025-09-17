@@ -19,7 +19,7 @@ const Index = () => {
   }, []);
 
   return (
-    <main className="min-h-screen relative">
+    <main className="min-h-screen">
       <Hero />
       <ProblemSection />
       <SolutionSection />
@@ -27,11 +27,6 @@ const Index = () => {
       <Benefits />
       
       <FinalCTA />
-      
-      {/* Subtle brand mark */}
-      <div className="fixed bottom-4 right-4 text-xs text-muted-foreground/60 font-medium">
-        MVPeeps
-      </div>
     </main>
   );
 };

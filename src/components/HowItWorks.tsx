@@ -23,7 +23,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="relative py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
@@ -64,6 +64,11 @@ const HowItWorks = () => {
             ))}
           </div>
         </div>
+      </div>
+      
+      {/* Subtle brand mark */}
+      <div className="absolute bottom-4 right-4 text-xs text-muted-foreground/40 font-medium">
+        MVPeeps
       </div>
     </section>
   );

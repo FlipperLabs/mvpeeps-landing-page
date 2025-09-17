@@ -90,6 +90,11 @@ const Hero = () => {
       {/* Decorative elements */}
       <div className="absolute top-1/4 left-10 w-20 h-20 bg-accent/20 rounded-full blur-xl" />
       <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-primary-glow/20 rounded-full blur-xl" />
+      
+      {/* Subtle brand mark */}
+      <div className="absolute bottom-4 right-4 text-xs text-primary-foreground/40 font-medium">
+        MVPeeps
+      </div>
     </section>
   );
 };
