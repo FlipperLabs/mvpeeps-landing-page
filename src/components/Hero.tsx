@@ -52,8 +52,8 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 leading-tight">
-            Meet
-            <span className="bg-gradient-accent bg-clip-text text-transparent"> MVPeeps</span>
+            <span className="bg-gradient-accent bg-clip-text text-transparent">MVPeeps:</span> Never Build
+            <span className="bg-gradient-accent bg-clip-text text-transparent"> Alone</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed">
