@@ -57,7 +57,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Meet MVPeeps - your virtual product team, on demand. Turn vibes into viable products with AI-powered strategists, 
+            Your virtual product team, on demand. Turn vibes into viable products with AI-powered strategists, 
             challengers, and user advocates in your pocket.
           </p>
 
