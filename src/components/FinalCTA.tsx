@@ -4,43 +4,42 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { ChevronRight, Sparkles } from "lucide-react";
-
 const FinalCTA = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
     try {
-      const { data, error } = await supabase.functions.invoke('notify-waitlist', {
-        body: { email }
+      const {
+        data,
+        error
+      } = await supabase.functions.invoke('notify-waitlist', {
+        body: {
+          email
+        }
       });
-
       if (error) throw error;
-
       toast({
         title: "Success!",
-        description: "You've been added to the waitlist. We'll be in touch soon!",
+        description: "You've been added to the waitlist. We'll be in touch soon!"
       });
-      
       setEmail("");
     } catch (error: any) {
       console.error("Error joining waitlist:", error);
       toast({
         title: "Error",
         description: error.message || "Something went wrong. Please try again.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
     }
   };
-
-  return (
-    <section className="py-20 bg-gradient-hero relative overflow-hidden">
+  return <section className="py-20 bg-gradient-hero relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-subtle opacity-30" />
       <div className="relative container mx-auto px-4 text-center">
         <div className="max-w-3xl mx-auto">
@@ -64,38 +63,20 @@ const FinalCTA = () => {
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-8">
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 h-12 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60"
-              required
-            />
-            <Button 
-              type="submit" 
-              size="lg" 
-              disabled={isSubmitting}
-              className="h-12 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 shadow-accent"
-            >
+            <Input type="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.target.value)} className="flex-1 h-12 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60" required />
+            <Button type="submit" size="lg" disabled={isSubmitting} className="h-12 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 shadow-accent">
               {isSubmitting ? "Joining..." : "Join Waitlist"}
               <ChevronRight className="w-4 h-4 ml-2" />
             </Button>
           </form>
 
-          <div className="flex items-center justify-center gap-8 text-sm text-primary-foreground/60">
-            <span>✓ Free to join</span>
-            <span>✓ Early access</span>
-            <span>✓ No spam, ever</span>
-          </div>
+          
         </div>
       </div>
       
       {/* Decorative elements */}
       <div className="absolute top-10 left-10 w-24 h-24 bg-accent/20 rounded-full blur-xl" />
       <div className="absolute bottom-10 right-10 w-32 h-32 bg-primary-glow/20 rounded-full blur-xl" />
-    </section>
-  );
+    </section>;
 };
-
 export default FinalCTA;
