@@ -6,7 +6,7 @@ const HowItWorks = () => {
       number: "01",
       icon: MessageSquare,
       title: "Set the Foundation",
-      description: "Connect your repo and share your project goals and what you've built so far"
+      description: "Connect your repo, share your project goals and what you've built so far"
     },
     {
       number: "02", 
