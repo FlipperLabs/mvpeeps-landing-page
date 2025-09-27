@@ -51,9 +51,9 @@ const FinalCTA = () => {
             </span>
           </div>
           
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-relaxed pb-4">
+          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-8 leading-[1.3] pb-2">
             Stop Building Alone.
-            <span className="block bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent leading-[1.3]">
               Start Building Smart.
             </span>
           </h2>
