@@ -51,9 +51,9 @@ const Hero = () => {
             </span>
           </div>
           
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight px-4">
+          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
             Never Build
-            <span className="bg-gradient-to-r from-accent to-accent-foreground bg-clip-text text-transparent"> Alone</span>
+            <span className="bg-[var(--gradient-accent)] bg-clip-text text-transparent"> Alone</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed">
