@@ -4,8 +4,8 @@ import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
 import HowItWorks from "@/components/HowItWorks";
 import Benefits from "@/components/Benefits";
-
 import FinalCTA from "@/components/FinalCTA";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Index = () => {
   useEffect(() => {
@@ -25,8 +25,8 @@ const Index = () => {
       <SolutionSection />
       <HowItWorks />
       <Benefits />
-      
       <FinalCTA />
+      <ThemeToggle />
     </main>
   );
 };
