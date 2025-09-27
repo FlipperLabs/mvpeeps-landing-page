@@ -53,7 +53,7 @@ const FinalCTA = () => {
           
           <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-relaxed pb-2">
             Stop Building Alone.
-            <span className="block bg-gradient-to-r from-accent via-secondary to-primary bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
               Start Building Smart.
             </span>
           </h2>
@@ -75,9 +75,8 @@ const FinalCTA = () => {
             <Button 
               type="submit" 
               size="lg" 
-              variant="playful"
               disabled={isSubmitting} 
-              className="h-12"
+              className="h-12 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {isSubmitting ? "Joining..." : "Join Waitlist"}
               <ChevronRight className="w-4 h-4 ml-2" />

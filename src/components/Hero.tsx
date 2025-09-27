@@ -53,7 +53,7 @@ const Hero = () => {
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight px-4">
             Never Build
-            <span className="bg-gradient-to-r from-accent via-primary to-secondary bg-clip-text text-transparent font-extrabold"> Alone</span>
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-extrabold"> Alone</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -73,9 +73,8 @@ const Hero = () => {
             <Button 
               type="submit" 
               size="lg" 
-              variant="playful"
               disabled={isSubmitting}
-              className="h-12"
+              className="h-12 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {isSubmitting ? "Joining..." : "Join Waitlist"}
               <ChevronRight className="w-4 h-4 ml-2" />

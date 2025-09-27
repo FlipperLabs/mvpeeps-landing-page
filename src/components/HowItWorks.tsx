@@ -26,8 +26,8 @@ const HowItWorks = () => {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">How It Works</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+            How It Works
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
             Simple, effective process to transform your ideas into focused, user-centered products
@@ -43,16 +43,16 @@ const HowItWorks = () => {
                   <div className="hidden md:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-primary to-primary/20 z-0" />
                 )}
                 
-                <div className="relative bg-card rounded-xl p-8 shadow-soft border border-border hover:shadow-playful hover:border-secondary/30 transition-all duration-300 hover:-translate-y-2 text-center group">
-                  <div className="w-16 h-16 bg-gradient-to-br from-secondary to-primary rounded-xl flex items-center justify-center mx-auto mb-6 shadow-md group-hover:scale-110 transition-transform duration-300">
+                <div className="relative bg-card rounded-xl p-8 shadow-card border border-border hover:shadow-lg transition-shadow text-center">
+                  <div className="w-16 h-16 bg-gradient-hero rounded-xl flex items-center justify-center mx-auto mb-6 shadow-glow">
                     <step.icon className="w-8 h-8 text-primary-foreground" />
                   </div>
                   
-                  <div className="text-sm font-bold text-secondary mb-2 tracking-wider">
+                  <div className="text-sm font-bold text-primary mb-2 tracking-wider">
                     STEP {step.number}
                   </div>
                   
-                  <h3 className="text-xl font-semibold text-card-foreground mb-4 group-hover:text-secondary transition-colors duration-300">
+                  <h3 className="text-xl font-semibold text-card-foreground mb-4">
                     {step.title}
                   </h3>
                   

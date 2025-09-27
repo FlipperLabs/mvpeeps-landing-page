@@ -34,7 +34,7 @@ const SolutionSection = () => {
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
             Your AI-Powered
-            <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent"> Product Team</span>
+            <span className="bg-gradient-hero bg-clip-text text-transparent"> Product Team</span>
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
             Get the diverse perspectives you need to build products that matter. 
@@ -44,11 +44,11 @@ const SolutionSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {personas.map((persona, index) => (
-            <div key={index} className="bg-card rounded-xl p-6 shadow-soft border border-border hover:shadow-playful hover:border-accent/30 transition-all duration-300 hover:-translate-y-2 group">
-              <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${persona.color} group-hover:scale-110 transition-transform duration-300`}>
+            <div key={index} className="bg-card rounded-xl p-6 shadow-card border border-border hover:shadow-lg transition-all hover:-translate-y-1">
+              <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${persona.color}`}>
                 <persona.icon className="w-7 h-7" />
               </div>
-              <h3 className="text-lg font-semibold text-card-foreground mb-3 group-hover:text-accent transition-colors duration-300">
+              <h3 className="text-lg font-semibold text-card-foreground mb-3">
                 {persona.role}
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
