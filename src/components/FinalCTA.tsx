@@ -40,7 +40,7 @@ const FinalCTA = () => {
   };
 
   return (
-    <section className="py-20 bg-[var(--gradient-hero)] relative overflow-hidden">
+    <section className="py-20 bg-background relative overflow-hidden">
       <div className="absolute inset-0 bg-[var(--gradient-subtle)] opacity-30" />
       <div className="relative container mx-auto px-4 text-center">
         <div className="max-w-3xl mx-auto">

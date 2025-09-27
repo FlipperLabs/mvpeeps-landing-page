@@ -40,7 +40,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[var(--gradient-hero)] min-h-screen flex items-center">
+    <section className="relative overflow-hidden bg-background min-h-screen flex items-center">
       <div className="absolute inset-0 bg-[var(--gradient-subtle)] opacity-30" />
       <div className="relative container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
