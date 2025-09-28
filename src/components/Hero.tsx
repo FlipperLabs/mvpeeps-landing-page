@@ -57,8 +57,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-            The accountability platform for indie hackers. Track progress, maintain momentum, 
-            and finally finish what you started with focused project boards and streak tracking.
+            Your accountability hub for shipping.
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-8">
