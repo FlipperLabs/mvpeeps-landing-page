@@ -3,19 +3,19 @@ import { AlertTriangle, Code, Zap } from "lucide-react";
 const ProblemSection = () => {
   const problems = [
     {
-      icon: Zap,
-      title: "Dopamine-Driven Development",
-      description: "Building features that feel good instead of features users need"
+      icon: Code,
+      title: "Project Graveyard",
+      description: "Too many unfinished projects collecting digital dust in your GitHub"
     },
     {
-      icon: Code,
-      title: "Endless Prototyping",
-      description: "Getting stuck in the build loop without validating assumptions"
+      icon: Zap,
+      title: "Feature Creep Spiral",
+      description: "Adding just one more feature before shipping, then another, then another..."
     },
     {
       icon: AlertTriangle,
-      title: "Solo Blind Spots",
-      description: "Missing critical perspectives that a real team would catch"
+      title: "Momentum Loss",
+      description: "Starting strong but losing steam without clear progress and accountability"
     }
   ];
 
@@ -24,12 +24,12 @@ const ProblemSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-            Why Vibe Coding Leads to
-            <span className="text-destructive"> Unfinished Projects</span>
+            Why Solo Projects
+            <span className="text-destructive"> Never Ship</span>
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Building alone means missing the critical voices that keep products focused, 
-            user-centered, and actually shippable.
+            Without structure, accountability, and focus, even the best ideas become 
+            abandoned side projects. It's time to break the cycle.
           </p>
         </div>
 

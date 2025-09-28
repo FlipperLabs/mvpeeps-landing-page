@@ -52,13 +52,13 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 leading-tight px-4">
-            Never Build
-            <span className="bg-gradient-to-r from-accent via-primary to-secondary bg-clip-text text-transparent font-extrabold"> Alone</span>
+            Ship Your
+            <span className="bg-gradient-to-r from-accent via-primary to-secondary bg-clip-text text-transparent font-extrabold"> MVP</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Your virtual product team, on demand. Turn vibes into viable products with AI-powered strategists, 
-            challengers, and user advocates in your pocket.
+            The accountability platform for indie hackers. Track progress, maintain momentum, 
+            and finally finish what you started with focused project boards and streak tracking.
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-8">

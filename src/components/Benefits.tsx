@@ -4,23 +4,23 @@ const Benefits = () => {
   const benefits = [
     {
       icon: Target,
-      title: "Clearer Goals",
-      description: "Stop building features nobody wants. Get laser-focused on user value and business objectives."
+      title: "Actually Finish Projects",
+      description: "Break the cycle of abandoned side projects with focused MVP boards and clear shipping goals."
     },
     {
       icon: TrendingUp,
-      title: "Stronger MVP",
-      description: "Build the right foundation first. Validate core assumptions before adding complexity."
+      title: "Maintain Momentum",
+      description: "Streak tracking and progress insights keep you consistently moving toward completion."
     },
     {
       icon: Zap,
-      title: "Faster Iteration",
-      description: "Get immediate feedback and course-correct quickly instead of building in the wrong direction."
+      title: "Ship Faster",
+      description: "Focus on essentials first. AI guidance helps you resist feature creep and perfectionism."
     },
     {
       icon: Clock,
-      title: "Less Wasted Time",
-      description: "Avoid the build-test-scrap cycle. Make informed decisions from day one."
+      title: "Stay Accountable",
+      description: "Progress tracking and gentle nudges ensure you're always working toward shipping, not just coding."
     }
   ];
 
@@ -29,11 +29,11 @@ const Benefits = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-            From Vibes to
-            <span className="bg-gradient-accent bg-clip-text text-transparent"> Viable</span>
+            From Ideas to
+            <span className="bg-gradient-accent bg-clip-text text-transparent"> Shipped MVPs</span>
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Transform your development process with the guidance of a complete product team
+            Finally finish what you start with accountability, focus, and momentum tracking
           </p>
         </div>
 

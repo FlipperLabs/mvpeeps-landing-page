@@ -47,17 +47,17 @@ const FinalCTA = () => {
           <div className="flex items-center justify-center gap-2 mb-6">
             <Sparkles className="w-5 h-5 text-accent" />
             <span className="text-sm font-medium text-foreground/80 tracking-wide uppercase">
-              Ready to Build Better?
+              Finally Ship Something
             </span>
           </div>
           
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-foreground mb-8 leading-[1.3] pb-2">
-            Stop Building <span className="bg-gradient-to-r from-accent via-primary to-secondary bg-clip-text text-transparent">Alone</span>.
+            Ship Your First <span className="bg-gradient-to-r from-accent via-primary to-secondary bg-clip-text text-transparent">MVP</span>
           </h2>
           
           <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
-            Join the waitlist and be among the first to experience what it's like 
-            to have a complete product team guiding every decision.
+            Join indie hackers who finally finish their projects. Get accountability, 
+            focus, and momentum to go from idea to shipped product.
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-8">
