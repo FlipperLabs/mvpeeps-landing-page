@@ -51,7 +51,7 @@ const FinalCTA = () => {
           </div>
           
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-foreground mb-8 leading-[1.3] pb-2">
-            Ship Your First <span className="bg-gradient-to-r from-accent via-primary to-secondary bg-clip-text text-transparent">MVP</span>
+            Don't just code. Finish.
           </h2>
           
           <p className="text-xl text-foreground/80 mb-8 leading-relaxed">Get accountability, focus, and momentum to go from idea to shipped product.</p>
