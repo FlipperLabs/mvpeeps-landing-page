@@ -5,20 +5,20 @@ const HowItWorks = () => {
     {
       number: "01",
       icon: MessageSquare,
-      title: "Set the Foundation",
-      description: "Connect your repo, share your project goals and what you've built so far"
+      title: "Define Your MVP",
+      description: "Create a focused project board with only the essentials needed to ship"
     },
     {
       number: "02", 
       icon: Users,
-      title: "Get Team Feedback",
-      description: "Our AI personas analyze, challenge, and provide diverse perspectives"
+      title: "Track & Build",
+      description: "Maintain momentum with streak tracking and get AI guidance when stuck"
     },
     {
       number: "03",
       icon: Rocket,
-      title: "Refine Into MVP",
-      description: "Receive actionable insights to focus on what truly matters"
+      title: "Ship & Iterate",
+      description: "Progress insights nudge you toward completion, not endless polishing"
     }
   ];
 
@@ -30,7 +30,7 @@ const HowItWorks = () => {
             How It Works
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Simple, effective process to transform your ideas into focused, user-centered products
+            A simple, focused workflow designed to get indie hackers from idea to shipped MVP
           </p>
         </div>
 
