@@ -40,7 +40,7 @@ const FinalCTA = () => {
     }
   };
   return <section className="py-20 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 bg-[var(--gradient-subtle)] opacity-30" />
+      <div className="absolute inset-0 bg-muted/30" />
       <div className="relative container mx-auto px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center justify-center gap-2 mb-6">
@@ -51,7 +51,7 @@ const FinalCTA = () => {
           </div>
           
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-[1.2] pb-2 sm:whitespace-nowrap">
-            Don't just code. <span className="bg-gradient-to-r from-accent via-primary to-secondary bg-clip-text text-transparent font-extrabold">Finish.</span>
+            Don't just code. <span className="text-accent font-extrabold">Finish.</span>
           </h2>
           
           <p className="text-xl text-foreground/80 mb-8 leading-relaxed">Get accountability, focus, and momentum to go from idea to shipped product.</p>

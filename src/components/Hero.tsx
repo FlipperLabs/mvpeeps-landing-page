@@ -41,7 +41,7 @@ const Hero = () => {
 
   return (
     <section className="relative overflow-hidden bg-background min-h-screen flex items-center">
-      <div className="absolute inset-0 bg-[var(--gradient-subtle)] opacity-30" />
+      <div className="absolute inset-0 bg-muted/30" />
       <div className="relative container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-center gap-2 mb-6">
@@ -53,7 +53,7 @@ const Hero = () => {
           
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 leading-tight px-4">
             Ship Your
-            <span className="bg-gradient-to-r from-accent via-primary to-secondary bg-clip-text text-transparent font-extrabold"> MVP</span>
+            <span className="text-accent font-extrabold"> MVP</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed">

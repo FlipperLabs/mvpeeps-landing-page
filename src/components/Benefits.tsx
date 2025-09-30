@@ -30,7 +30,7 @@ const Benefits = () => {
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
             From Ideas to
-            <span className="bg-gradient-accent bg-clip-text text-transparent"> Shipped MVPs</span>
+            <span className="text-accent"> Shipped MVPs</span>
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
             Finally finish what you start with accountability, focus, and momentum tracking
@@ -40,7 +40,7 @@ const Benefits = () => {
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {benefits.map((benefit, index) => (
             <div key={index} className="flex items-start gap-6 bg-card rounded-xl p-8 shadow-card border border-border hover:shadow-lg transition-all hover:-translate-y-1">
-              <div className="w-12 h-12 bg-gradient-hero rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                 <benefit.icon className="w-6 h-6 text-primary-foreground" />
               </div>
               <div>
