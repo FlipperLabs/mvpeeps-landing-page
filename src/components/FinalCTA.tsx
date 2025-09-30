@@ -50,7 +50,7 @@ const FinalCTA = () => {
             </span>
           </div>
           
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-[1.2] pb-2 whitespace-nowrap">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-[1.2] pb-2 sm:whitespace-nowrap">
             Don't just code. <span className="bg-gradient-to-r from-accent via-primary to-secondary bg-clip-text text-transparent font-extrabold">Finish.</span>
           </h2>
           
