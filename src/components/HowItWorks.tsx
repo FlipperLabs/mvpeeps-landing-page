@@ -40,11 +40,11 @@ const HowItWorks = () => {
               <div key={index} className="relative">
                 {/* Connection line */}
                 {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-16 left-full w-full h-0.5 bg-primary z-0" />
+                  <div className="hidden md:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-primary to-primary/20 z-0" />
                 )}
                 
                 <div className="relative bg-card rounded-xl p-8 shadow-card border border-border hover:shadow-lg transition-shadow text-center">
-                  <div className="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mx-auto mb-6 shadow-glow">
+                  <div className="w-16 h-16 bg-gradient-hero rounded-xl flex items-center justify-center mx-auto mb-6 shadow-glow">
                     <step.icon className="w-8 h-8 text-primary-foreground" />
                   </div>
                   

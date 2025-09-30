@@ -34,7 +34,7 @@ const SolutionSection = () => {
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
             Track Progress,
-            <span className="text-primary"> Ship MVPs</span>
+            <span className="bg-gradient-hero bg-clip-text text-transparent"> Ship MVPs</span>
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
             Focus on what matters with project boards, streak tracking, and progress insights. 

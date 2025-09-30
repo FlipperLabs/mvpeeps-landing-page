@@ -50,7 +50,7 @@ const Testimonials = () => {
               </p>
               
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-hero rounded-full flex items-center justify-center">
                   <span className="text-sm font-semibold text-primary-foreground">
                     {testimonial.name.split(' ').map(n => n[0]).join('')}
                   </span>
