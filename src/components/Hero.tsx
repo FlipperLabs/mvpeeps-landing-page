@@ -79,16 +79,16 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-background py-12">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-background py-16 sm:py-20">
       <div className="absolute inset-0 bg-[var(--gradient-subtle)]" />
       <div className="absolute inset-x-0 top-[-30%] h-[60%] rounded-[50%] bg-primary/5 blur-[150px]" />
 
       <div className="relative container mx-auto px-4">
-        <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-14">
-          <div className="w-full lg:w-1/2 space-y-8">
+        <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-14">
+          <div className="w-full space-y-8 lg:w-1/2">
 
             <div className="space-y-6">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] text-foreground">
+              <h1 className="text-3xl font-bold leading-[1.05] text-foreground sm:text-5xl md:text-6xl">
                 Stay Focused.
                 <br className="hidden sm:block" />
                 Stay Accountable.
@@ -98,7 +98,7 @@ const Hero = () => {
               </p>
             </div>
 
-            <ul className="grid grid-cols-2 gap-3 sm:max-w-sm">
+            <ul className="grid gap-3 sm:max-w-sm sm:grid-cols-2">
               {highlights.map((item) => (
                 <li
                   key={item.label}
@@ -110,7 +110,7 @@ const Hero = () => {
               ))}
             </ul>
 
-            <div className="space-y-3">
+            <div className="space-y-3 w-full max-w-xl">
               <form
                 onSubmit={handleSubmit}
                 className="flex flex-col gap-3 sm:flex-row"
@@ -120,14 +120,14 @@ const Hero = () => {
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="h-12 rounded-xl border border-border bg-background/80 text-base backdrop-blur placeholder:text-muted-foreground"
+                  className="h-12 w-full rounded-xl border border-border bg-background/80 text-base backdrop-blur placeholder:text-muted-foreground"
                   required
                 />
                 <Button
                   type="submit"
                   size="lg"
                   disabled={isSubmitting}
-                  className="h-12 rounded-xl bg-gradient-to-r from-primary to-secondary font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-all hover:bg-transparent hover:brightness-105"
+                  className="h-12 w-full rounded-xl bg-gradient-to-r from-primary to-secondary font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-all hover:bg-transparent hover:brightness-105 sm:w-auto"
                 >
                   {isSubmitting ? "Joining..." : "Join the waitlist"}
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -141,8 +141,8 @@ const Hero = () => {
           </div>
 
           <div className="w-full lg:w-1/2">
-            <div className="relative mx-auto max-w-[560px] scale-[0.9] sm:scale-95 md:scale-[0.98] lg:scale-100">
-              <div className="absolute -inset-6 rounded-[2.6rem] bg-gradient-to-br from-primary/10 via-secondary/12 to-accent/10 blur-3xl" />
+            <div className="relative mx-auto w-full max-w-[560px] scale-[0.92] sm:scale-95 md:scale-[0.98] lg:scale-100">
+              <div className="absolute -inset-3 rounded-[2.6rem] bg-gradient-to-br from-primary/10 via-secondary/12 to-accent/10 blur-2xl sm:-inset-6 sm:blur-3xl" />
               <div className="relative rounded-[2.3rem] border border-border/80 bg-card/95 p-6 shadow-2xl backdrop-blur sm:p-7">
                 <div className="mb-5 flex items-center justify-between">
                   <div className="flex items-center gap-2">
