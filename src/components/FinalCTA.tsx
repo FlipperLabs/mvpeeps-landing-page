@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { ChevronRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 const FinalCTA = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -28,47 +28,75 @@ const FinalCTA = () => {
         description: "You've been added to the waitlist. We'll be in touch soon!"
       });
       setEmail("");
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Error joining waitlist:", error);
+      const message = error instanceof Error ? error.message : "Something went wrong. Please try again.";
       toast({
         title: "Error",
-        description: error.message || "Something went wrong. Please try again.",
+        description: message,
         variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
     }
   };
-  return <section className="py-20 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 bg-[var(--gradient-subtle)] opacity-30" />
-      <div className="relative container mx-auto px-4 text-center">
-        <div className="max-w-3xl mx-auto">
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <Sparkles className="w-5 h-5 text-accent" />
-            <span className="text-sm font-medium text-foreground/80 tracking-wide uppercase">
-              Finally Ship Something
-            </span>
-          </div>
-          
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-[1.2] pb-2 sm:whitespace-nowrap">
-            Don't just code. <span className="bg-gradient-to-r from-accent via-primary to-secondary bg-clip-text text-transparent font-extrabold">Finish.</span>
-          </h2>
-          
-          <p className="text-xl text-foreground/80 mb-8 leading-relaxed">Get accountability, focus, and momentum to go from idea to shipped product.</p>
+  return (
+    <section className="relative overflow-hidden py-24">
+      <div className="absolute inset-0 bg-[var(--gradient-subtle)]" />
+      <div className="absolute inset-x-0 bottom-[-40%] h-[60%] rounded-[50%] bg-secondary/10 blur-[160px]" />
 
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-8">
-            <Input type="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.target.value)} className="flex-1 h-12 bg-background/80 border-border text-foreground placeholder:text-muted-foreground backdrop-blur-sm" required />
-            <Button type="submit" size="lg" disabled={isSubmitting} className="h-12 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 shadow-lg hover:shadow-xl transition-all duration-300">
-              {isSubmitting ? "Joining..." : "Join Waitlist"}
-              <ChevronRight className="w-4 h-4 ml-2" />
-            </Button>
-          </form>
+      <div className="relative container mx-auto px-4">
+        <div className="mx-auto grid max-w-5xl gap-10 rounded-[2.5rem] border border-border/60 bg-card/95 p-10 shadow-2xl backdrop-blur">
+          <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-xl space-y-6 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 self-center rounded-full border border-border/60 bg-muted/50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground lg:self-start">
+                <Sparkles className="h-4 w-4 text-accent" />
+                Ship what you start
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-foreground">
+                Don&apos;t just code. <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">Finish.</span>
+              </h2>
+              <p className="text-lg text-foreground/75">
+                Join a cohort of builders staying accountable, celebrating wins, and actually getting MVPs into the wild.
+              </p>
+            </div>
+
+            <div className="mx-auto w-full max-w-md rounded-2xl border border-border/60 bg-background/80 p-6 shadow-[var(--shadow-card)]">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="space-y-2 text-left">
+                  <label htmlFor="final-cta-email" className="text-sm font-medium text-foreground/80">
+                    Join the private beta waitlist
+                  </label>
+                  <Input
+                    id="final-cta-email"
+                    type="email"
+                    placeholder="Your best email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="h-12 rounded-xl border border-border bg-background/90 text-base"
+                    required
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  size="lg"
+                  disabled={isSubmitting}
+                  className="h-12 w-full rounded-xl bg-gradient-to-r from-primary via-secondary to-accent font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-all hover:bg-transparent hover:brightness-105"
+                >
+                  {isSubmitting ? "Joining..." : "Join waitlist"}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+
+                <p className="text-xs text-muted-foreground">
+                  Zero spam. We&apos;ll only reach out when you can start building alongside other focused makers.
+                </p>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
-      
-      {/* Decorative elements */}
-      <div className="absolute top-10 left-10 w-24 h-24 bg-accent/20 rounded-full blur-xl animate-pulse" />
-      <div className="absolute bottom-10 right-10 w-32 h-32 bg-primary/20 rounded-full blur-xl animate-pulse" />
-    </section>;
+    </section>
+  );
 };
 export default FinalCTA;
