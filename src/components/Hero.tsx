@@ -35,7 +35,7 @@ const Hero = () => {
     },
     {
       icon: Target,
-      label: "Stay accountable with peers",
+      label: "Turn goals into daily action",
     },
     {
       icon: Clock3,
@@ -99,13 +99,13 @@ const Hero = () => {
                   <ArrowRight className="ml-2 inline-block h-4 w-4" />
                 </a>
               </Button>
-              <div className="flex flex-col items-center gap-3 text-sm font-medium text-muted-foreground sm:flex-row sm:flex-wrap sm:items-center sm:justify-start sm:gap-x-6 sm:gap-y-2">
+              <div className="flex flex-col items-center gap-3 text-sm font-medium text-muted-foreground sm:flex-row sm:items-center sm:justify-center sm:gap-x-8 sm:gap-y-0 lg:flex-nowrap lg:justify-start">
                 {benefits.map((benefit) => (
                   <span
                     key={benefit}
-                    className="inline-flex items-center gap-2 text-center sm:justify-start sm:text-left"
+                    className="inline-flex items-center gap-2 text-center sm:justify-center sm:whitespace-nowrap sm:text-left lg:justify-start"
                   >
-                    <Check className="h-4 w-4 text-primary" />
+                    <Check className="h-4 w-4 text-emerald-500" />
                     {benefit}
                   </span>
                 ))}
