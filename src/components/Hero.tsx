@@ -93,7 +93,11 @@ const Hero = () => {
                 size="lg"
                 className="h-12 w-full justify-center rounded-xl bg-gradient-to-r from-primary to-secondary px-8 font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-all hover:bg-transparent hover:brightness-105 sm:w-auto"
               >
-                <a href="https://app.mvpeeps.dev/">
+                <a
+                  href="https://app.mvpeeps.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Get Started
                   <ArrowRight className="ml-2 inline-block h-4 w-4" />
                 </a>
