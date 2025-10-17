@@ -56,45 +56,55 @@ const Hero = () => {
 
       <div className="relative container mx-auto px-4">
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-14">
-          <div className="w-full space-y-8 lg:w-1/2">
-
+          <div className="w-full space-y-8 text-center sm:text-left lg:w-1/2">
             <div className="space-y-6">
-              <h1 className="text-3xl font-bold leading-[1.05] text-foreground sm:text-5xl md:text-6xl">
+              <div className="flex justify-center sm:justify-start">
+                <span className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-card/80 px-4 py-1 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground shadow-sm">
+                  ✨ Built live with MVPeeps
+                  <ArrowRight className="h-3.5 w-3.5 text-primary" />
+                </span>
+              </div>
+              <h1 className="text-balance text-3xl font-bold leading-[1.05] text-foreground sm:text-5xl md:text-6xl">
                 Stay Focused.
                 <br className="hidden sm:block" />
                 Stay Accountable.
               </h1>
-              <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-xl">
+              <p className="mx-auto max-w-xl text-lg leading-relaxed text-foreground/80 md:text-xl sm:mx-0">
                 Trade drift for discipline. Map the critical path to your MVP, lock in daily wins, and track every milestone so you finish what you start.
               </p>
             </div>
 
-            <ul className="grid gap-3 sm:max-w-sm sm:grid-cols-2">
+            <ul className="mx-auto grid w-full max-w-sm gap-3 sm:mx-0 sm:max-w-none sm:grid-cols-2">
               {highlights.map((item) => (
                 <li
                   key={item.label}
-                  className="flex items-center gap-3 rounded-xl border border-border/60 bg-card/80 px-3 py-2 text-xs font-semibold text-foreground shadow-sm backdrop-blur"
+                  className="flex flex-col items-center gap-2 rounded-xl border border-border/60 bg-card/80 px-3 py-3 text-xs font-semibold text-foreground shadow-sm backdrop-blur sm:flex-row sm:items-center sm:gap-3 sm:text-left"
                 >
-                  <item.icon className="h-4 w-4 text-primary" />
-                  {item.label}
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full border border-border/60 bg-background/70">
+                    <item.icon className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="text-center sm:text-left">{item.label}</span>
                 </li>
               ))}
             </ul>
 
-            <div className="w-full max-w-xl space-y-4">
+            <div className="mx-auto w-full max-w-xl space-y-4 sm:mx-0">
               <Button
                 asChild
                 size="lg"
-                className="h-12 w-full rounded-xl bg-gradient-to-r from-primary to-secondary px-8 font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-all hover:bg-transparent hover:brightness-105 sm:w-auto"
+                className="h-12 w-full justify-center rounded-xl bg-gradient-to-r from-primary to-secondary px-8 font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-all hover:bg-transparent hover:brightness-105 sm:w-auto"
               >
                 <a href="https://app.mvpeeps.dev/">
                   Get Started
                   <ArrowRight className="ml-2 inline-block h-4 w-4" />
                 </a>
               </Button>
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-muted-foreground">
+              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium text-muted-foreground sm:justify-start">
                 {benefits.map((benefit) => (
-                  <span key={benefit} className="flex items-center gap-2">
+                  <span
+                    key={benefit}
+                    className="flex items-center justify-center gap-2 sm:justify-start"
+                  >
                     <Check className="h-4 w-4 text-primary" />
                     {benefit}
                   </span>
