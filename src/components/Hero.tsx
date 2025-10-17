@@ -60,14 +60,17 @@ const Hero = () => {
             <div className="space-y-6">
               <div className="flex justify-center sm:justify-start">
                 <span className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-card/80 px-4 py-1 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground shadow-sm">
-                  ✨ Built live with MVPeeps
+                  ✨ Built with MVPeeps
                   <ArrowRight className="h-3.5 w-3.5 text-primary" />
                 </span>
               </div>
-              <h1 className="text-balance text-3xl font-bold leading-[1.05] text-foreground sm:text-5xl md:text-6xl">
-                Stay Focused.
-                <br className="hidden sm:block" />
-                Stay Accountable.
+              <h1 className="text-balance text-3xl font-bold leading-tight text-foreground sm:text-5xl md:text-6xl">
+                <span className="block">
+                  Stay Focused.
+                </span>
+                <span className="block">
+                  Stay Accountable.
+                </span>
               </h1>
               <p className="mx-auto max-w-xl text-lg leading-relaxed text-foreground/80 md:text-xl sm:mx-0">
                 Trade drift for discipline. Map the critical path to your MVP, lock in daily wins, and track every milestone so you finish what you start.
