@@ -59,10 +59,6 @@ const Hero = () => {
           <div className="w-full space-y-8 text-center sm:text-left lg:w-1/2">
             <div className="space-y-6">
               <div className="flex justify-center sm:justify-start">
-                <span className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-card/80 px-4 py-1 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground shadow-sm">
-                  ✨ Built with MVPeeps
-                  <ArrowRight className="h-3.5 w-3.5 text-primary" />
-                </span>
               </div>
               <h1 className="text-balance text-3xl font-bold leading-tight text-foreground sm:text-5xl md:text-6xl">
                 <span className="block">
