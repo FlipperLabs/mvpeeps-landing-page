@@ -1,25 +1,19 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { useToast } from "@/components/ui/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 import {
   Activity,
   ArrowRight,
   BarChart2,
   CalendarRange,
-  Check,
   Clock3,
+  Check,
   Target,
 } from "lucide-react";
 
 const COMMIT_SEQUENCE = ["0", "2", "4", "7", "9", "12"];
 
 const Hero = () => {
-  const [email, setEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentCommit, setCurrentCommit] = useState(0);
-  const { toast } = useToast();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,35 +23,6 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      const { data, error } = await supabase.functions.invoke('notify-waitlist', {
-        body: { email }
-      });
-
-      if (error) throw error;
-
-      toast({
-        title: "Success!",
-        description: "You've been added to the waitlist. We'll be in touch soon!",
-      });
-      
-      setEmail("");
-    } catch (error: unknown) {
-      console.error("Error joining waitlist:", error);
-      const message = error instanceof Error ? error.message : "Something went wrong. Please try again.";
-      toast({
-        title: "Error",
-        description: message,
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   const highlights = [
     {
@@ -76,6 +41,12 @@ const Hero = () => {
       icon: Clock3,
       label: "Build consistent shipping streaks",
     },
+  ];
+
+  const benefits = [
+    "No credit card required",
+    "7-day free trial",
+    "Cancel anytime",
   ];
 
   return (
@@ -110,33 +81,25 @@ const Hero = () => {
               ))}
             </ul>
 
-            <div className="space-y-3 w-full max-w-xl">
-              <form
-                onSubmit={handleSubmit}
-                className="flex flex-col gap-3 sm:flex-row"
+            <div className="w-full max-w-xl space-y-4">
+              <Button
+                asChild
+                size="lg"
+                className="h-12 w-full rounded-xl bg-gradient-to-r from-primary to-secondary px-8 font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-all hover:bg-transparent hover:brightness-105 sm:w-auto"
               >
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="h-12 w-full rounded-xl border border-border bg-background/80 text-base backdrop-blur placeholder:text-muted-foreground"
-                  required
-                />
-                <Button
-                  type="submit"
-                  size="lg"
-                  disabled={isSubmitting}
-                  className="h-12 w-full rounded-xl bg-gradient-to-r from-primary to-secondary font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-all hover:bg-transparent hover:brightness-105 sm:w-auto"
-                >
-                  {isSubmitting ? "Joining..." : "Join the waitlist"}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </form>
-
-              <p className="text-xs font-medium text-muted-foreground">
-                Join fellow indie builders shipping faster together — updates straight to your inbox.
-              </p>
+                <a href="https://app.mvpeeps.dev/">
+                  Get Started
+                  <ArrowRight className="ml-2 inline-block h-4 w-4" />
+                </a>
+              </Button>
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-muted-foreground">
+                {benefits.map((benefit) => (
+                  <span key={benefit} className="flex items-center gap-2">
+                    <Check className="h-4 w-4 text-primary" />
+                    {benefit}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
