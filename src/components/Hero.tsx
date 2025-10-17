@@ -1,25 +1,19 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { useToast } from "@/components/ui/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 import {
   Activity,
   ArrowRight,
   BarChart2,
   CalendarRange,
-  Check,
   Clock3,
+  Check,
   Target,
 } from "lucide-react";
 
 const COMMIT_SEQUENCE = ["0", "2", "4", "7", "9", "12"];
 
 const Hero = () => {
-  const [email, setEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentCommit, setCurrentCommit] = useState(0);
-  const { toast } = useToast();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,35 +23,6 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      const { data, error } = await supabase.functions.invoke('notify-waitlist', {
-        body: { email }
-      });
-
-      if (error) throw error;
-
-      toast({
-        title: "Success!",
-        description: "You've been added to the waitlist. We'll be in touch soon!",
-      });
-      
-      setEmail("");
-    } catch (error: unknown) {
-      console.error("Error joining waitlist:", error);
-      const message = error instanceof Error ? error.message : "Something went wrong. Please try again.";
-      toast({
-        title: "Error",
-        description: message,
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   const highlights = [
     {
@@ -70,12 +35,18 @@ const Hero = () => {
     },
     {
       icon: Target,
-      label: "Stay accountable with peers",
+      label: "Turn goals into daily action",
     },
     {
       icon: Clock3,
       label: "Build consistent shipping streaks",
     },
+  ];
+
+  const benefits = [
+    "No credit card required",
+    "7-day Pro free trial included",
+    "Setup in under 2 minutes",
   ];
 
   return (
@@ -85,58 +56,63 @@ const Hero = () => {
 
       <div className="relative container mx-auto px-4">
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-14">
-          <div className="w-full space-y-8 lg:w-1/2">
-
+          <div className="w-full space-y-8 text-center sm:text-left lg:w-1/2">
             <div className="space-y-6">
-              <h1 className="text-3xl font-bold leading-[1.05] text-foreground sm:text-5xl md:text-6xl">
-                Stay Focused.
-                <br className="hidden sm:block" />
-                Stay Accountable.
+              <div className="flex justify-center sm:justify-start">
+              </div>
+              <h1 className="text-balance text-3xl font-bold leading-tight text-foreground sm:text-5xl md:text-6xl">
+                <span className="block">
+                  Stay Focused.
+                </span>
+                <span className="block">
+                  Stay Accountable.
+                </span>
               </h1>
-              <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-xl">
+              <p className="mx-auto max-w-xl text-lg leading-relaxed text-foreground/80 md:text-xl sm:mx-0">
                 Trade drift for discipline. Map the critical path to your MVP, lock in daily wins, and track every milestone so you finish what you start.
               </p>
             </div>
 
-            <ul className="grid gap-3 sm:max-w-sm sm:grid-cols-2">
+            <ul className="mx-auto grid w-full max-w-sm gap-3 sm:mx-0 sm:max-w-none sm:grid-cols-2">
               {highlights.map((item) => (
                 <li
                   key={item.label}
-                  className="flex items-center gap-3 rounded-xl border border-border/60 bg-card/80 px-3 py-2 text-xs font-semibold text-foreground shadow-sm backdrop-blur"
+                  className="flex flex-col items-center gap-2 rounded-xl border border-border/60 bg-card/80 px-3 py-3 text-xs font-semibold text-foreground shadow-sm backdrop-blur sm:flex-row sm:items-center sm:gap-3 sm:text-left"
                 >
-                  <item.icon className="h-4 w-4 text-primary" />
-                  {item.label}
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full border border-border/60 bg-background/70">
+                    <item.icon className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="text-center sm:text-left">{item.label}</span>
                 </li>
               ))}
             </ul>
 
-            <div className="space-y-3 w-full max-w-xl">
-              <form
-                onSubmit={handleSubmit}
-                className="flex flex-col gap-3 sm:flex-row"
+            <div className="mx-auto w-full max-w-xl space-y-4 sm:mx-0">
+              <Button
+                asChild
+                size="lg"
+                className="h-12 w-full justify-center rounded-xl bg-gradient-to-r from-primary to-secondary px-8 font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-all hover:bg-transparent hover:brightness-105 sm:w-auto"
               >
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="h-12 w-full rounded-xl border border-border bg-background/80 text-base backdrop-blur placeholder:text-muted-foreground"
-                  required
-                />
-                <Button
-                  type="submit"
-                  size="lg"
-                  disabled={isSubmitting}
-                  className="h-12 w-full rounded-xl bg-gradient-to-r from-primary to-secondary font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-all hover:bg-transparent hover:brightness-105 sm:w-auto"
+                <a
+                  href="https://app.mvpeeps.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  {isSubmitting ? "Joining..." : "Join the waitlist"}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </form>
-
-              <p className="text-xs font-medium text-muted-foreground">
-                Join fellow indie builders shipping faster together — updates straight to your inbox.
-              </p>
+                  Get Started
+                  <ArrowRight className="ml-2 inline-block h-4 w-4" />
+                </a>
+              </Button>
+              <div className="flex flex-col items-center gap-3 text-sm font-medium text-muted-foreground sm:flex-row sm:items-center sm:justify-center sm:gap-x-8 sm:gap-y-0 lg:flex-nowrap lg:justify-start">
+                {benefits.map((benefit) => (
+                  <span
+                    key={benefit}
+                    className="inline-flex items-center gap-2 text-center sm:justify-center sm:whitespace-nowrap sm:text-left lg:justify-start"
+                  >
+                    <Check className="h-4 w-4 text-emerald-500" />
+                    {benefit}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
