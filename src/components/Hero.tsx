@@ -45,8 +45,8 @@ const Hero = () => {
 
   const benefits = [
     "No credit card required",
-    "7-day free trial",
-    "Cancel anytime",
+    "7-day Pro free trial included",
+    "Setup in under 2 minutes",
   ];
 
   return (
@@ -99,11 +99,11 @@ const Hero = () => {
                   <ArrowRight className="ml-2 inline-block h-4 w-4" />
                 </a>
               </Button>
-              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium text-muted-foreground sm:justify-start">
+              <div className="flex flex-col items-center gap-3 text-sm font-medium text-muted-foreground sm:flex-row sm:flex-wrap sm:items-center sm:justify-start sm:gap-x-6 sm:gap-y-2">
                 {benefits.map((benefit) => (
                   <span
                     key={benefit}
-                    className="flex items-center justify-center gap-2 sm:justify-start"
+                    className="inline-flex items-center gap-2 text-center sm:justify-start sm:text-left"
                   >
                     <Check className="h-4 w-4 text-primary" />
                     {benefit}
