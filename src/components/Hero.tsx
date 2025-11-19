@@ -45,7 +45,7 @@ const Hero = () => {
 
   const benefits = [
     "No credit card required",
-    "7-day Pro free trial included",
+    "Free-to-use forever",
     "Setup in under 2 minutes",
   ];
 
@@ -69,7 +69,7 @@ const Hero = () => {
                 </span>
               </h1>
               <p className="mx-auto max-w-xl text-lg leading-relaxed text-foreground/80 md:text-xl sm:mx-0">
-                Trade drift for discipline. Map the critical path to your MVP, lock in daily wins, and track every milestone so you finish what you start.
+                Map the critical path to your MVP, lock in daily wins, and track every milestone so you finish what you start.
               </p>
             </div>
 
